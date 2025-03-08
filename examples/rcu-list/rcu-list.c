@@ -18,6 +18,10 @@
  * 通过RCU保护的链表仍然可以使用标准的链表元素。只有在遍历链表、修改和删除链表元素时，必须调用标准函数的RCU变体。
  * 函数名称很容易记住：在标准函数之后附加_rcu后缀。
  *
+ * RCU只解决了读者和写者之间的并发问题，但不能保证多个写者不会同时修改链表，导致数据损坏。
+ *
+ * struct rcu_head 是RCU机制中的一个结构体，主要用于延迟释放需要RCU保护的数据结构。它的核心作用是记录RCU回调函数，当RCU读者完成访问之后，由内核调度调用该回调，以执行清理或释放操作
+ *
  * @note 源码位置 /include/linux/rculist.h
  *
  * @see static inline void list_del_rcu(struct list_head *entry)
