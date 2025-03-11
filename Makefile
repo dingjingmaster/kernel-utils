@@ -14,6 +14,7 @@ all:doc
 doc:
 	@echo 'Generating doc ...'
 	@$(shell which doxygen) > /dev/null 2>&1
+	@rm -f GPATH GRTAGS GTAGS
 	@echo 'Done!'
 
 clean:
