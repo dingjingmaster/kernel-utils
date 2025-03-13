@@ -25,7 +25,7 @@ typedef unsigned long KFlags;
 
 extern spinlock_t gKFlagsLocker;
 
-static inline void k_set_k2u_enable_ptr_check()
+static inline void k_set_k2u_enable_ptr_check(void)
 {
     spin_lock(&gKFlagsLocker);
     {
@@ -36,7 +36,7 @@ static inline void k_set_k2u_enable_ptr_check()
     spin_unlock(&gKFlagsLocker);
 }
 
-static inline void k_set_k2u_disable_ptr_check()
+static inline void k_set_k2u_disable_ptr_check(void)
 {
     spin_lock(&gKFlagsLocker);
     {
@@ -47,7 +47,7 @@ static inline void k_set_k2u_disable_ptr_check()
     spin_unlock(&gKFlagsLocker);
 }
 
-static inline void k_set_kfu_enable_ptr_check()
+static inline void k_set_kfu_enable_ptr_check(void)
 {
     spin_lock(&gKFlagsLocker);
     {
@@ -58,7 +58,7 @@ static inline void k_set_kfu_enable_ptr_check()
     spin_unlock(&gKFlagsLocker);
 }
 
-static inline void k_set_kfu_disable_ptr_check()
+static inline void k_set_kfu_disable_ptr_check(void)
 {
     spin_lock(&gKFlagsLocker);
     {
@@ -69,5 +69,6 @@ static inline void k_set_kfu_disable_ptr_check()
     spin_unlock(&gKFlagsLocker);
 }
 
+unsigned long k_get_syscall_table(void);
 
 #endif
