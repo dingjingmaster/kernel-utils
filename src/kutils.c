@@ -11,7 +11,7 @@
 
 DEFINE_SPINLOCK(gKFlagsLocker);
 
-unsigned long k_get_syscall_table(void)
+void* k_get_syscall_table(void)
 {
 #ifdef __x86_64__
 #define IA32_LAST 0xc0000082

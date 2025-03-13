@@ -71,6 +71,6 @@ static inline void k_set_kfu_disable_ptr_check(void)
 }
 #endif
 
-unsigned long k_get_syscall_table(void);
+void* k_get_syscall_table(void);
 
 #endif
