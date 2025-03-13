@@ -13,6 +13,7 @@
 #include <linux/magic.h>
 #include <linux/version.h>
 
+#if 0
 #define THREAD_INFO_GAP                     128
 #define K_UTILS_DISABLE_PTR_CHECK_K2U       0x0400  
 #define K_UTILS_DISABLE_PTR_CHECK_KFU       0x0800  
@@ -68,6 +69,7 @@ static inline void k_set_kfu_disable_ptr_check(void)
     }
     spin_unlock(&gKFlagsLocker);
 }
+#endif
 
 unsigned long k_get_syscall_table(void);
 
